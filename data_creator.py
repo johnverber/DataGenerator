@@ -26,7 +26,7 @@ with open("data.txt", "w") as f:
         ssn = fake.ssn()
         f.write(f"{name},{address},{sex},{age},{phone_number},{email},{ssn}\n")
 
-output_format = input("Please enter the output format (.csv or .json): ")
+output_format = input("Please enter the output format (.csv or .json or .xml): ")
 
 if output_format == ".csv":
     with open("data.txt", "r") as f:
@@ -41,5 +41,23 @@ elif output_format == ".json":
     with open("data.json", "w") as f:
         json.dump(data, f)
     print("Data written to data.json.")
+elif output_format == ".xml":
+    with open("data.txt", "r") as f:
+        data = [line.strip().split(",") for line in f]
+    with open("data.xml", "w") as f:
+        f.write('<?xml version="1.0" encoding="UTF-8"?>\n')
+        f.write("<data>\n")
+        for row in data:
+            f.write("  <person>\n")
+            f.write(f"    <name>{row[0]}</name>\n")
+            f.write(f"    <address>{row[1]}</address>\n")
+            f.write(f"    <sex>{row[2]}</sex>\n")
+            f.write(f"    <age>{row[3]}</age>\n")
+            f.write(f"    <phone_number>{row[4]}</phone_number>\n")
+            f.write(f"    <email>{row[5]}</email>\n")
+            f.write(f"    <ssn>{row[6]}</ssn>\n")
+            f.write("  </person>\n")
+        f.write("</data>\n")
+
 else:
     print("Invalid output format. Please enter .csv or .json.")
