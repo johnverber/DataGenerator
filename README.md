@@ -27,5 +27,7 @@ Files:
       
       data.json
       
+      data.xml
+      
 Known Bugs:
     None as of now.  But please update if you find one so it can be fixed.  Or better yet, fix it and create a pull request.  Thanks. 
