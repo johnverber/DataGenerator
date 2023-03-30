@@ -19,23 +19,13 @@ Operating Instructions:
 Files:
     Python files:
         data_generator.py (generates fake human data in a txt file - data.txt - of a user defined amount)
+    
     Files that (can) be generated:
       data.txt
+      
       data.csv
+      
       data.json
+      
 Known Bugs:
     None as of now.  But please update if you find one so it can be fixed.  Or better yet, fix it and create a pull request.  Thanks. 
-Footer
-© 2023 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
